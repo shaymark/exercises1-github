@@ -10,4 +10,12 @@ import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
+    var item:String? {
+        didSet(oldValue){
+            nameLable.text = item
+        }
+    }
+    
+    @IBOutlet weak var nameLable: UILabel!
+    
 }

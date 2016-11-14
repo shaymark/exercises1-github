@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="llG-I9-0l0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1cp-QQ-DRB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,25 +10,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="RsY-0J-gil">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="exercises1" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tabBarController id="1cp-QQ-DRB" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="qlW-SY-ovd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bfc-vX-XJQ" kind="relationship" relationship="viewControllers" id="8lU-97-CvD"/>
+                        <segue destination="llG-I9-0l0" kind="relationship" relationship="viewControllers" id="Q6d-nb-CTe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TvG-XP-RYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1985" y="900"/>
+        </scene>
+        <!--items-->
+        <scene sceneID="XoM-cd-ETt">
+            <objects>
+                <collectionViewController id="bfc-vX-XJQ" customClass="CollectionViewController" customModule="exercises1" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="obp-Pi-Feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dDN-0c-3p6">
+                            <size key="itemSize" width="84" height="118"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IBZ-VS-Ohi" customClass="ItemCollectionViewCell" customModule="exercises1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-Kt-PoI">
+                                            <rect key="frame" x="41" y="15" width="43" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="nameLable" destination="2Lg-Kt-PoI" id="SCC-YI-pGi"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="bfc-vX-XJQ" id="Lsz-rJ-r7s"/>
+                            <outlet property="delegate" destination="bfc-vX-XJQ" id="3fO-IZ-TJz"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="items" image="Luggage-50" id="MNE-fE-cbC"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fmz-sQ-XcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-206" y="124"/>
+            <point key="canvasLocation" x="-986.39999999999998" y="1173.4632683658172"/>
         </scene>
-        <!--Contacts Table View Controller-->
+        <!--contacts-->
         <scene sceneID="Y9g-4K-xM6">
             <objects>
                 <tableViewController id="llG-I9-0l0" customClass="ContactsTableViewController" customModule="exercises1" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,10 +141,15 @@
                             <outlet property="delegate" destination="llG-I9-0l0" id="MBH-Zf-a3t"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="contacts" image="Contacts-50" id="e9Y-dr-I5L"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsV-8W-tNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864.79999999999995" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-986" y="462"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Contacts-50" width="25" height="25"/>
+        <image name="Luggage-50" width="25" height="25"/>
+    </resources>
 </document>

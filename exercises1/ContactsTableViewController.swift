@@ -10,6 +10,8 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
     
+    private let reuseIdentifier = "contactCell"
+    
     let values = [
         Contact(image: "one", topLeft: "one topLeft", botomLeft: "one BottomLeft", topRight: "one TopRight"),
         Contact(image: "two", topLeft: "two topLeft", botomLeft: "two BottomLeft", topRight: "two TopRight"),
@@ -39,22 +41,20 @@ class ContactsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return values.count
+        return self.values.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
         if let contactCell = cell as? ContactTableViewCell {
-            contactCell.contact = values[indexPath.row]
+            contactCell.contact = self.values[indexPath.row]
         }
         
         return cell

@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2A5752B61DD9C267002C6A32 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5752B51DD9C267002C6A32 /* UIImage.swift */; };
+		2A5752B81DD9CE6E002C6A32 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5752B71DD9CE6E002C6A32 /* CollectionViewController.swift */; };
+		2A5752BC1DD9D17F002C6A32 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5752BB1DD9D17F002C6A32 /* ItemCollectionViewCell.swift */; };
 		2ADF42AA1DD9ACAA0065E3AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF42A91DD9ACAA0065E3AA /* AppDelegate.swift */; };
-		2ADF42AC1DD9ACAA0065E3AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF42AB1DD9ACAA0065E3AA /* ViewController.swift */; };
 		2ADF42AF1DD9ACAA0065E3AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF42AD1DD9ACAA0065E3AA /* Main.storyboard */; };
 		2ADF42B21DD9ACAA0065E3AA /* exercises1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF42B01DD9ACAA0065E3AA /* exercises1.xcdatamodeld */; };
 		2ADF42B41DD9ACAA0065E3AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF42B31DD9ACAA0065E3AA /* Assets.xcassets */; };
@@ -20,9 +21,10 @@
 
 /* Begin PBXFileReference section */
 		2A5752B51DD9C267002C6A32 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		2A5752B71DD9CE6E002C6A32 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		2A5752BB1DD9D17F002C6A32 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewCell.swift; path = ../ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		2ADF42A61DD9ACAA0065E3AA /* exercises1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exercises1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ADF42A91DD9ACAA0065E3AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2ADF42AB1DD9ACAA0065E3AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2ADF42AE1DD9ACAA0065E3AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2ADF42B11DD9ACAA0065E3AA /* exercises1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = exercises1.xcdatamodel; sourceTree = "<group>"; };
 		2ADF42B31DD9ACAA0065E3AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = exercises1/Assets.xcassets; sourceTree = "<group>"; };
@@ -63,11 +65,12 @@
 		2ADF42A81DD9ACAA0065E3AA /* exercises1 */ = {
 			isa = PBXGroup;
 			children = (
+				2A5752BB1DD9D17F002C6A32 /* ItemCollectionViewCell.swift */,
 				2A5752B51DD9C267002C6A32 /* UIImage.swift */,
 				2ADF42BF1DD9B1050065E3AA /* ContactsTableViewController.swift */,
 				2ADF42A91DD9ACAA0065E3AA /* AppDelegate.swift */,
-				2ADF42AB1DD9ACAA0065E3AA /* ViewController.swift */,
 				2ADF42AD1DD9ACAA0065E3AA /* Main.storyboard */,
+				2A5752B71DD9CE6E002C6A32 /* CollectionViewController.swift */,
 				2ADF42C11DD9B46B0065E3AA /* ContactTableViewCell.swift */,
 			);
 			path = exercises1;
@@ -157,12 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ADF42AC1DD9ACAA0065E3AA /* ViewController.swift in Sources */,
+				2A5752B81DD9CE6E002C6A32 /* CollectionViewController.swift in Sources */,
 				2ADF42C21DD9B46B0065E3AA /* ContactTableViewCell.swift in Sources */,
 				2ADF42B21DD9ACAA0065E3AA /* exercises1.xcdatamodeld in Sources */,
 				2A5752B61DD9C267002C6A32 /* UIImage.swift in Sources */,
 				2ADF42C01DD9B1050065E3AA /* ContactsTableViewController.swift in Sources */,
 				2ADF42AA1DD9ACAA0065E3AA /* AppDelegate.swift in Sources */,
+				2A5752BC1DD9D17F002C6A32 /* ItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,29 +37,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dDN-0c-3p6">
-                            <size key="itemSize" width="84" height="118"/>
+                            <size key="itemSize" width="133" height="118"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="IBZ-VS-Ohi" customClass="ItemCollectionViewCell" customModule="exercises1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
+                                <rect key="frame" x="0.0" y="0.0" width="133" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-Kt-PoI">
-                                            <rect key="frame" x="41" y="15" width="43" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-Kt-PoI">
+                                            <rect key="frame" x="45" y="8" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="two" translatesAutoresizingMaskIntoConstraints="NO" id="8QU-iV-eNL">
+                                            <rect key="frame" x="15" y="34" width="103" height="71"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="2Lg-Kt-PoI" firstAttribute="top" secondItem="IBZ-VS-Ohi" secondAttribute="topMargin" id="205-Hq-kno"/>
+                                    <constraint firstItem="2Lg-Kt-PoI" firstAttribute="centerX" secondItem="IBZ-VS-Ohi" secondAttribute="centerX" id="APW-c0-wgF"/>
+                                    <constraint firstItem="8QU-iV-eNL" firstAttribute="leading" secondItem="IBZ-VS-Ohi" secondAttribute="leadingMargin" constant="7" id="IDr-wu-bqz"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="8QU-iV-eNL" secondAttribute="bottom" constant="5" id="izo-cH-86q"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="8QU-iV-eNL" secondAttribute="trailing" constant="7" id="ln9-0V-2wH"/>
+                                    <constraint firstItem="8QU-iV-eNL" firstAttribute="top" secondItem="2Lg-Kt-PoI" secondAttribute="bottom" constant="5" id="uaT-g1-mjt"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="itemImage" destination="8QU-iV-eNL" id="x2c-3k-0ff"/>
                                     <outlet property="nameLable" destination="2Lg-Kt-PoI" id="SCC-YI-pGi"/>
                                 </connections>
                             </collectionViewCell>
@@ -151,5 +162,6 @@
     <resources>
         <image name="Contacts-50" width="25" height="25"/>
         <image name="Luggage-50" width="25" height="25"/>
+        <image name="two" width="750" height="503"/>
     </resources>
 </document>

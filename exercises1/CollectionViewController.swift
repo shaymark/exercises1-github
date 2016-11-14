@@ -12,16 +12,17 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
 
-    let values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10" , "11", "12", "13", "14", "15", "16", "17", "18",
-                  "19", "20", "21", "22", "23", "24", "25"] 
+    let values = [Item("1", "one"), Item("2", "two"), Item("3", "one"), Item("4", "two"), Item("5", "one"), Item("6", "one"), Item("7", "one"), Item("8", "one"), Item("9", "one"), Item("10", "one"), Item("11", "one"), Item("12", "one"), Item("13", "two"), Item("14", "two"), Item("15", "two")]
 
     
     override func viewDidLoad() {
         initLayout()
+        
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         initLayout()
+        collectionView?.reloadData()
     }
     
     func initLayout(){
@@ -46,13 +47,32 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        if let itemCell = cell as? ItemCollectionViewCell {
+        //Q: is there a libary that makes resize of photos according to the image size on screen?
+        
+        if let itemCell = cell as? ItemCollectionViewCell ,
+            let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            
+            itemCell.thumbnailSize = layout.itemSize.width
             itemCell.item = self.values[indexPath.row]
         }
     
         return cell
     }
-    
-   
 
 }
+
+struct Item{
+
+    let name: String
+    let image: String
+    
+    init(_ name: String, _ image: String){
+        self.name = name
+        self.image = image
+    }
+    
+}
+
+
+
+

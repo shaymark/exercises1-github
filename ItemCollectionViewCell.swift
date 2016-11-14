@@ -10,12 +10,22 @@ import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
-    var item:String? {
+    var thumbnailSize:CGFloat = 100
+    
+    var item:Item? {
         didSet(oldValue){
-            nameLable.text = item
+            if let fullSizedImage = UIImage(named: (item?.image)!){
+                itemImage.image = fullSizedImage.thumbnailOfSize(thumbnailSize)
+            } else {
+                itemImage.image = nil
+            }
+            
+            nameLable.text = item?.name
         }
     }
     
+   
     @IBOutlet weak var nameLable: UILabel!
+    @IBOutlet weak var itemImage: UIImageView!
     
 }

@@ -1,5 +1,5 @@
 //
-//  CollectionViewController.swift
+//  ItemsCollectionViewController.swift
 //  exercises1
 //
 //  Created by shay markovich on 14/11/2016.
@@ -10,11 +10,10 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
+class ItemsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
 
-    let values = [Item("1", "one"), Item("2", "two"), Item("3", "one"), Item("4", "two"), Item("5", "one"), Item("6", "one"), Item("7", "one"), Item("8", "one"), Item("9", "one"), Item("10", "one"), Item("11", "one"), Item("12", "one"), Item("13", "two"), Item("14", "two"), Item("15", "two")]
+    let values = ItemsModel.items
 
-    
     override func viewDidLoad() {
         initLayout()
         
@@ -49,7 +48,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
         //Q: is there a libary that makes resize of photos according to the image size on screen?
         
-        if let itemCell = cell as? ItemCollectionViewCell ,
+        if let itemCell = cell as? ItemsCollectionViewCell ,
             let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             
             itemCell.thumbnailSize = layout.itemSize.width
@@ -59,18 +58,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         return cell
     }
 
-}
-
-struct Item{
-
-    let name: String
-    let image: String
-    
-    init(_ name: String, _ image: String){
-        self.name = name
-        self.image = image
-    }
-    
 }
 
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemCollectionViewCell: UICollectionViewCell {
+class ItemsCollectionViewCell: UICollectionViewCell {
     
     var thumbnailSize:CGFloat = 100
     

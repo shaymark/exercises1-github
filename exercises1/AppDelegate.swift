@@ -8,15 +8,23 @@
 
 import UIKit
 import CoreData
+import PKRevealController
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let revealController: PKRevealController = PKRevealController(frontViewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UITabBarController"), leftViewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootViewController"))
+        
+        revealController.delegate = self
+        
+        self.window?.rootViewController = revealController
+        
         return true
     }
 

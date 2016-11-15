@@ -1,18 +1,18 @@
 //
-//  ContactsTableViewController.swift
+//  ContactsModel.swift
 //  exercises1
 //
-//  Created by shay markovich on 14/11/2016.
+//  Created by shay markovich on 15/11/2016.
 //  Copyright © 2016 shay markovich. All rights reserved.
 //
 
 import UIKit
 
-class ContactsTableViewController: UITableViewController {
+class ContactsModel: NSObject {
+
     
-    private let reuseIdentifier = "contactCell"
-    
-    let values = [
+    static let contacts: [Contact] = {
+        return [
         Contact(image: "one", topLeft: "one topLeft", botomLeft: "one BottomLeft", topRight: "one TopRight"),
         Contact(image: "two", topLeft: "two topLeft", botomLeft: "two BottomLeft", topRight: "two TopRight"),
         Contact(image: "three", topLeft: "three topLeft", botomLeft: "three BottomLeft", topRight: "three TopRight"),
@@ -30,42 +30,35 @@ class ContactsTableViewController: UITableViewController {
         Contact(image: "sixteen", topLeft: "sixteen topLeft", botomLeft: "sixteen BottomLeft", topRight: "sixteen TopRight"),
         Contact(image: "seventeen", topLeft: "seventeen topLeft", botomLeft: "seventeen BottomLeft", topRight: "seventeen TopRight"),
         Contact(image: "eighteen", topLeft: "eighteen topLeft", botomLeft: "eighteen BottomLeft", topRight: "eighteen TopRight"),
-    ]
+        ]}()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.values.count
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        
-        if let contactCell = cell as? ContactTableViewCell {
-            contactCell.contact = self.values[indexPath.row]
-        }
-        
-        return cell
-    }
-
-
 }
+
 
 struct Contact {
     let image: String
     let topLeft: String
     let botomLeft: String
     let topRight: String
+    
+    init(image: String, topLeft: String, botomLeft: String, topRight: String){
+        self.image = image
+        self.topLeft = topLeft
+        self.botomLeft = botomLeft
+        self.topRight = topRight
+    }
+    
+    init ( with data : AnyObject){
+        if let dataDictionary = data as? [String: AnyObject]{
+            self.image = dataDictionary["image"] as? String ?? ""
+            self.topLeft = dataDictionary["topLeft"] as? String ?? ""
+            self.botomLeft = dataDictionary["botomLeft"] as? String ?? ""
+            self.topRight = dataDictionary["topRight"] as? String ?? ""
+        } else {
+            self.image = ""
+            self.topLeft = ""
+            self.botomLeft = ""
+            self.topRight = ""
+        }
+    }
 }

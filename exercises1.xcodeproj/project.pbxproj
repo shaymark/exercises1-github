@@ -35,7 +35,7 @@
 		2A5752BB1DD9D17F002C6A32 /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A787CFC1DDAF1DF00909F8D /* ItemsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsModel.swift; sourceTree = "<group>"; };
 		2A787CFE1DDAF38600909F8D /* ContactsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
-		2A787D001DDAF6D300909F8D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ../RootViewController.swift; sourceTree = "<group>"; };
+		2A787D001DDAF6D300909F8D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2AC9CDFC1DDB3BA300886F45 /* NetworkApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
 		2AC9CDFF1DDB486700886F45 /* ContactsNetworkCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsNetworkCallback.swift; sourceTree = "<group>"; };
 		2AC9CE011DDBB15200886F45 /* RootViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,9 +67,9 @@
 		2A787CF91DDAEF9900909F8D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2AC9CE031DDBB16D00886F45 /* RootView */,
 				2A787CFA1DDAEFA700909F8D /* Contacts */,
 				2A787CFB1DDAEFB600909F8D /* Items */,
+				2AC9CE031DDBB16D00886F45 /* RootView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -77,10 +77,10 @@
 		2A787CFA1DDAEFA700909F8D /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				2A0F69CD1DDB1031008A48B9 /* ContactModel.swift */,
 				2ADF42C11DD9B46B0065E3AA /* ContactTableViewCell.swift */,
 				2A787CFE1DDAF38600909F8D /* ContactsModel.swift */,
 				2ADF42BF1DD9B1050065E3AA /* ContactsTableViewController.swift */,
-				2A0F69CD1DDB1031008A48B9 /* ContactModel.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -99,11 +99,12 @@
 			isa = PBXGroup;
 			children = (
 				2AC9CDFE1DDB483500886F45 /* Callbacks */,
-				2AC9CDFB1DDB3B5A00886F45 /* Response */,
 				2AC9CDFA1DDB3B5200886F45 /* Request */,
+				2AC9CDFB1DDB3B5A00886F45 /* Response */,
 				2AC9CDFC1DDB3BA300886F45 /* NetworkApi.swift */,
 			);
 			name = Network;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		2AC9CDFA1DDB3B5200886F45 /* Request */ = {
@@ -111,6 +112,7 @@
 			children = (
 			);
 			name = Request;
+			path = Request;
 			sourceTree = "<group>";
 		};
 		2AC9CDFB1DDB3B5A00886F45 /* Response */ = {
@@ -118,6 +120,7 @@
 			children = (
 			);
 			name = Response;
+			path = Response;
 			sourceTree = "<group>";
 		};
 		2AC9CDFE1DDB483500886F45 /* Callbacks */ = {
@@ -126,6 +129,7 @@
 				2AC9CDFF1DDB486700886F45 /* ContactsNetworkCallback.swift */,
 			);
 			name = Callbacks;
+			path = Callbacks;
 			sourceTree = "<group>";
 		};
 		2AC9CE031DDBB16D00886F45 /* RootView */ = {
@@ -135,6 +139,7 @@
 				2AC9CE011DDBB15200886F45 /* RootViewTableViewCell.swift */,
 			);
 			name = RootView;
+			path = RootView;
 			sourceTree = "<group>";
 		};
 		2ADF429D1DD9ACAA0065E3AA = {
@@ -159,8 +164,8 @@
 		2ADF42A81DD9ACAA0065E3AA /* exercises1 */ = {
 			isa = PBXGroup;
 			children = (
-				2AC9CDF61DDB399100886F45 /* Network */,
 				2A787CF91DDAEF9900909F8D /* Controllers */,
+				2AC9CDF61DDB399100886F45 /* Network */,
 				2ADF42A91DD9ACAA0065E3AA /* AppDelegate.swift */,
 				2ADF42B81DD9ACAA0065E3AA /* Info.plist */,
 				2ADF42AD1DD9ACAA0065E3AA /* Main.storyboard */,

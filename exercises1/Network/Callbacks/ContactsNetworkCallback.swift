@@ -8,7 +8,22 @@
 
 import Foundation
 
-struct ContactsNetworkCallback{
+protocol ContactNetworkProtocol {
+    func onSuccessFunc(contacts: [ContactModel]) -> ()
+    func onErrorFunc(errorDescription: String, errorCode: Int) ->()
+}
+
+struct ContactsNetworkCallback : ContactNetworkProtocol{
+   
     var onSuccess: ([ContactModel])-> ()
     var onError: (String, Int)->()
+    
+    internal func onErrorFunc(errorDescription: String, errorCode: Int) {
+        onError(errorDescription, errorCode)
+    }
+
+    internal func onSuccessFunc(contacts: [ContactModel]) {
+        onSuccess(contacts)
+    }
+    
 }

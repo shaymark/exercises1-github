@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let revealController: PKRevealController = PKRevealController(frontViewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UITabBarController"), leftViewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StaticRootTableViewController"))
+        let revealController: PKRevealController = PKRevealController(frontViewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UINavigationController"), leftViewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootScrollViewController"))
         
         revealController.delegate = self
         

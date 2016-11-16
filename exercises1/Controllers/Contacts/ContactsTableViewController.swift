@@ -12,9 +12,23 @@ import AlamofireObjectMapper
 
 class ContactsTableViewController: UITableViewController {
     
-    private let reuseIdentifier = "contactCell"
+
+    private struct Storyboard {
+        static let reuseIdentifier = "contactCell"
+        static let contactSegue = "showContact"
+    }
     
     var values : [Contact] = ContactsModel.contacts
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.contactSegue {
+            if let contactController = segue.destination as? ContactDetailsViewController {
+                if let contact = sender as? Contact {
+                        contactController.contact = contact
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,13 +91,19 @@ class ContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.reuseIdentifier, for: indexPath)
         
         if let contactCell = cell as? ContactTableViewCell {
             contactCell.contact = self.values[indexPath.row]
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: Storyboard.contactSegue, sender: self.values[indexPath.row])
+        
     }
 
 

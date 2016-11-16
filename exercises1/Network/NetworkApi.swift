@@ -27,13 +27,13 @@ class NetworkApi {
         }
     }
     
-    static func getContacts(callback: ContactsNetworkCallback) {
+    static func getContacts(callback: ContactNetworkProtocol) {
         Alamofire.request(contactsURL).responseArray { (response: DataResponse<[ContactModel]>) in
             
             if let contacts = response.result.value{
-                callback.onSuccess(contacts)
+                callback.onSuccessFunc(contacts: contacts)
             } else {
-                callback.onError("error", 1)
+                callback.onErrorFunc(errorDescription: "error", errorCode:  1)
             }
             
         }
